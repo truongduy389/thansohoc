@@ -66,6 +66,7 @@
                                         <th scope="col">Số điện thoại</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Ngày sinh</th>
+                                        <th scope="col">Số Chu Dao</th>
                                     </tr>
                                 </thead>
                                 <tbody class="fwn">
@@ -76,6 +77,7 @@
                                         <td>0{{$value['customer_phone']}}</td>
                                         <td>{{$value['customer_email']}}</td>
                                         <td>{{$value['customer_date']}}</td>
+                                        <td>{{$value['customer_sochudao']}}</td>
                                     </tr>
                                     
                                     @endforeach

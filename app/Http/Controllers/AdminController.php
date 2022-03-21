@@ -103,6 +103,17 @@ class AdminController extends Controller
         return view('admin.edit_py')->with(compact('so'));
     }
 
+    public function edit_peakyear($id_py, Request $request){
+        $data=array();
+
+        $data['peakYear_name']=$request->py;
+        $data['peakYear_desc']=$request->desc_py;
+
+        PeakYearModel::where('peakYear_id', $id_py)->update($data);
+
+        return redirect()->back();
+    }
+
     public function delete_py($peak_id){
         PeakYearModel::where('peakYear_id', $peak_id)->delete();
         return redirect()->back();

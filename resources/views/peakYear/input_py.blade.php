@@ -30,6 +30,8 @@
             </div>
             
             <div class="col-lg-6 col-sm-12 d-flex flex-column align-items-start px-5 my-5">
+                <form action="{{ URL::to('insert') }}" method="post">
+                    {{ csrf_field() }}
                 <div class="login-email px-3">
                     <input type="text" name="namepy" id="" placeholder="Họ và tên" required="">
                 </div>
@@ -37,14 +39,15 @@
                     <input type="email" name="emailpy" id="" placeholder="Email" required="">
                 </div>
                 <div class="login-email mt-4 px-3">
-                    <input type="email" name="phonepy" id="" placeholder="Số điện thoại" required="">
+                    <input type="text" name="phonepy" id="" placeholder="Số điện thoại" required="">
                 </div>
                 <div class="login-email mt-4 px-3">
                     <input id="dob" type="date" id="start" name="datepy" min="1900-01-01" required="">
                 </div>
-                <button class="mt-4">Kết quả</button>
+                <button type="submit" class="mt-4">Kết quả</button>
+            </form>
             </div>
-    
+           
         </div>
     </div>
 

@@ -58,8 +58,8 @@
                     <h5 class="pt-3 ps-1 py-2">Tên Peak Year</h5>
                     <textarea class="form-control" placeholder=""name="descpy" id="" cols="30" rows="10"></textarea>
                     <div class="d-flex">
-                        <button class="btn btn-primary">Thêm</button>   
-                        <button class="btn btn-secondary">Hủy</button>   
+                        <button type="submit" class="btn btn-primary">Thêm</button>   
+                        <button class="btn btn-secondary"><a href="{{URL::to('/dashboard')}}">Hủy</a></button>   
                     </div>
                     </form>
                 </div>

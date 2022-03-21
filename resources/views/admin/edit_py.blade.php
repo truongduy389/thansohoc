@@ -48,13 +48,18 @@
                 <div class="main__body-admin-body-left p-3">
                     <h1>Thêm Peak Year</h1>
                     <h5 class="pt-3 ps-1 py-2">Tên Peak Year</h5>
-                    <input type="text" class="form-control" placeholder="Peak Year">
-                    <h5 class="pt-3 ps-1 py-2">Tên Peak Year</h5>
-                    <textarea class="form-control" placeholder=""name="" id="" cols="30" rows="10"></textarea>
+                    @foreach($so as $value)
+                    <form action="{{ URL::to('/edit-peakyear/'.$value->peakYear_id) }}" method="post">
+                        {{csrf_field()}}
+                        
+                    <input type="text" name="py" class="form-control" placeholder="Số chủ đạo" value="{{ $value->peakYear_name }}">
+                    <h5 class="pt-3 ps-1 py-2">Nội dung Số chủ đạo</h5>
+                    <textarea class="form-control" placeholder=""name="desc_py" id="" cols="30" rows="10">{{ $value->peakYear_desc }}</textarea>
                     <div class="d-flex">
-                        <button class="btn btn-warning">Cập nhật</button>   
-                        <button class="btn btn-secondary">Hủy</button>   
+                        <button type="submit" class="btn btn-warning">Cập nhật</button>   
+                        <button class="btn btn-secondary"><a href="{{URL::to('/dashboard')}}">Trở về</a></button>   
                     </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-7 py-3 pe-3">
@@ -73,60 +78,14 @@
                                 </tr>
                             </thead>
                             <tbody class="fwn">
+                                @foreach ($so as $v)
                                 <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
+                                    <th style="width: 50px" scope="row">{{ $v->peakYear_id }}</th>
+                                    <td>{{ $v->peakYear_name }}</td>
+                                    <td class="text-hidden-away py-0">{{ $v->peakYear_desc }}</td>
+                                    
                                 </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 50px" scope="row">1</th>
-                                    <td>Peak year 1</td>
-                                    <td class="text-hidden-away py-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                                    <td class="text-end text-blue"><i class="fa-solid fa-pen-to-square"></i></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

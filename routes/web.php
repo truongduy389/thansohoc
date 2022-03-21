@@ -40,9 +40,10 @@ Route::post('/edit-so/{idSo}', [App\Http\Controllers\AdminController::class, 'ed
 Route::get('/add-py', [App\Http\Controllers\AdminController::class, 'add_py'])->name('add_py');
 Route::post('/save-py', [App\Http\Controllers\AdminController::class, 'save_py'])->name('save_py');
 Route::get('/edit-py/{py_id}', [App\Http\Controllers\AdminController::class, 'edit_py'])->name('edit_py');
+Route::post('/edit-peakyear/{id_py}', [App\Http\Controllers\AdminController::class, 'edit_peakyear'])->name('edit_peakyear');
 Route::get('/delete-py/{peak_id}', [App\Http\Controllers\AdminController::class, 'delete_py'])->name('delete_py');
 
 //Peak Year
 Route::get('/peak-year', [App\Http\Controllers\HomeController::class, 'peak_year'])->name('peak_year');
-
-Route::post('/update-customer/{idCus}', [App\Http\Controllers\AdminController::class, 'update_customer'])->name('update_customer');
+Route::get('/result-py', [App\Http\Controllers\HomeController::class, 'result_py'])->name('result_py');
+Route::post('/insert', [App\Http\Controllers\HomeController::class, 'insert'])->name('insert');
