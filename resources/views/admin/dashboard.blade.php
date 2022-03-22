@@ -40,6 +40,8 @@
                     <h2><?php 
                         $name = Session::get('admin_name');
                         echo $name;
+                        $id = Session::get('admin_id');
+                        
                     ?></h2>
                     <div class="log-out-btn">
                         <a href="{{URL::to('/logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -57,6 +59,17 @@
                     </div>
                     <div class="main__body-admin-sum-answer-content px-3">
                         <h3>Danh sách các câu trả lời</h3>
+                        <p class="mt-3">
+                            <?php
+                            $message = Session::get('message');
+                            if($message){
+                               ?>
+                               <h3 style="color:green;">{{ $message }}</h3>
+                               <?php
+                                Session::put('message'.null);
+                            }
+                            ?>
+                        </p>
                         <div class="main__body-admin-sum-answer-content-list mt-3">
                             <table class="table table-striped fz-16">
                                 <thead>
@@ -133,6 +146,6 @@
     </script>
 
     <!-- JavaScript -->
-    <script src="/assets/js/js.js"></script>
+    <script src="{{ asset('/assets/js/js.js') }}"></script>
 </body>
 </html>

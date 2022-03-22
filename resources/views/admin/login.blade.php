@@ -29,13 +29,6 @@
             </div>
             <div class="col-lg-6 col-sm-12 d-flex flex-column justify-content-center align-items-start px-5">
                 <h2>Sign in</h2>
-                <?php
-                $message = Session::get('message');
-                if($message){
-                    echo $message;
-                    Session::put('message'.null);
-                }
-                ?>
                 <form action="{{URL::to('/admin-dashboard')}}" method="post">
                     {{csrf_field()}}
                 <div class="login-email mt-4 d-flex align-items-center px-3">
@@ -48,6 +41,15 @@
                 </div>
                 <button type="submit" name="submit_loginadmin" class="mt-4">Sign in</button>
                 </form>
+                <p class="mt-3">
+                    <?php
+                    $message = Session::get('message');
+                    if($message){
+                        echo $message;
+                        Session::put('message'.null);
+                    }
+                    ?>
+                </p>
                 <div class="mt-5 d-flex">
                     <span>Don't have an account?</span><a class="ps-2 color-result" href="#">Create a new account</a>
                 </div>

@@ -34,19 +34,38 @@
             </div>
             <div>
                 <div class="d-flex justify-content-between p-3">
-                    <h2>Nguyen Minh Tam</h2>
+                    <h2>
+                        <?php 
+                        $name = Session::get('admin_name');
+                        echo $name;
+                        $id = Session::get('admin_id');
+                        
+                    ?>
+                    </h2>
                     <div class="log-out-btn">
-                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <a href="{{URL::to('/logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="main__body-admin-body d-flex flex-wrap col-lg-10">
+       
             <div class="col-lg-5 p-3">
+                 <form action="{{ URL::to('/save-thanso') }}" method="post">
+                {{ csrf_field() }}
                 <div class="main__body-admin-body-left p-3">
                     <h1>Thêm Thần số</h1>
-                    <form action="{{ URL::to('/save-thanso') }}" method="post">
-                        {{ csrf_field() }}
+                    <p class="mt-3">
+                        <?php
+                        $message = Session::get('message');
+                        if($message){
+                            ?>
+                               <h3 style="color:green;">{{ $message }}</h3>
+                               <?php    
+                            Session::put('message'.null);
+                        }
+                        ?>
+                    </p>
                     <h5 class="pt-3 ps-1 py-2">Tên Thần số</h5>
                     <input type="text" class="form-control" name="name_so" placeholder="Thần số">
                     <h5 class="pt-3 ps-1 py-2">Nội dung Thần số</h5>
@@ -55,9 +74,11 @@
                         <button type="submit" class="btn btn-primary">Thêm</button>   
                         <button class="btn btn-secondary">Hủy</button>   
                     </div>
-                    </form>
+                    
                 </div>
+                </form>
             </div>
+            
             <div class="col-lg-7 py-3 pe-3">
                 <div class="main__body-admin-body-right p-3">
                     <div class="d-flex justify-content-between align-items-center">

@@ -168,7 +168,7 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 #main {padding-top: 70px;}
 
 .main__slider {
-    background-image: url("{{ asset('public/assets/img/background.jpg')}}");
+    background-image: url("/assets/img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
@@ -606,7 +606,7 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 }
 
 .main__body-admin-body-right-list {
-    height: 85vh;
+    height: 82vh;
     overflow-x: scroll;
     overflow-y: scroll;
 }
@@ -738,3 +738,33 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 .mt-negative-custom-7 .text-left{z-index: 5;}
 
 /* --- Peak year result End ---*/
+
+/* ----------------------- */
+
+/* --- Add Start ---*/
+
+.main__body-admin-body-add {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.main__body-admin-body-add h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.main__body-admin-body-add button {width: 100px;}
+
+.main__body-admin-body-left h1 {
+    font-size: 24px;
+}
+
+.main__body-admin-body-left button {
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 100px;
+}
+
+/* --- Add End ---*/

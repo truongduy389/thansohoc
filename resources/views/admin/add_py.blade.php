@@ -40,9 +40,16 @@
             </div>
             <div>
                 <div class="d-flex justify-content-between p-3">
-                    <h2>Nguyen Minh Tam</h2>
+                    <h2>
+                        <?php 
+                        $name = Session::get('admin_name');
+                        echo $name;
+                        $id = Session::get('admin_id');
+                        
+                    ?>
+                    </h2>
                     <div class="log-out-btn">
-                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <a href="{{URL::to('/logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a>
                     </div>
                 </div>
             </div>
@@ -51,6 +58,17 @@
             <div class="col-lg-5 p-3">
                 <div class="main__body-admin-body-left p-3">
                     <h1>Thêm Peak Year</h1>
+                    <p class="mt-3">
+                        <?php
+                        $message = Session::get('message');
+                        if($message){
+                            ?>
+                               <h3 style="color:green;">{{ $message }}</h3>
+                               <?php
+                            Session::put('message'.null);
+                        }
+                        ?>
+                    </p>
                     <form action="{{ URL::to('/save-py') }}" method="post">
                         {{ csrf_field() }}
                     <h5 class="pt-3 ps-1 py-2">Tên Peak Year</h5>

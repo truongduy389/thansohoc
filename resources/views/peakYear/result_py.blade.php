@@ -18,6 +18,10 @@
 
 </head>
 <body>
+    <?php
+        $cus = Session::get('customer_id');
+        var_dump($cus);
+    ?>
     <div id="header">
         <div id="header">
             <div class="container header__container p-3">
@@ -84,28 +88,30 @@
         <div class="main__result pb-5">
             <div class="container p-3 py-5 d-flex">
                 <div class="main__result-box d-flex flex-column align-items-center">
-                    <h2 data-aos="fade-up">HỌ VÀ TÊN: <span>NGUYỄN MINH TÂM</span></h2>
-                    <h2 data-aos="fade-up" data-aos-delay="500">NGÀY SINH: <span>07/01/2000</span> </h2>
+                    @foreach($customer as $value)
+                    <h2 data-aos="fade-up">HỌ VÀ TÊN: <span>{{ $value->customer_name }}</span></h2>
+                    <h2 data-aos="fade-up" data-aos-delay="500">NGÀY SINH: <span>{{ $date1 }}</span> </h2>
+                    @endforeach
                     <h3 class="mt-5" data-aos="fade-up" data-aos-delay="1000">THÁP PEAK YEAR</h3>
                     <div data-aos="zoom-in" data-aos-delay="1800" data-aos-duration="500"  class="mt-2 d-flex flex-column align-items-center justify-content-center w-main">
                         <div class="peak-year-tower">
                             <div class="peak-year-tower-out-side d-flex flex-column align-items-center justify-content-center">
-                                <h5 class="text-age">44</h5>
+                                <h5 class="text-age">{{ $py4 }}</h5>
                                 <div class="d-flex">
                                     <div class="peak-year-tower-out-side-left"></div>
                                     <div class="peak-year-tower-out-side-right"></div>
                                 </div>
                                 <div class="peak-year-tower-absolute">
                                     <div class="d-flex flex-column align-items-center">
-                                        <h5 class="text-age">35</h5>
+                                        <h5 class="text-age">{{ $py3 }}</h5>
                                         <div class="d-flex">
                                             <div class="peak-year-tower-middle-side-left">
                                             </div>
                                             <div class="peak-year-tower-middle-side-right"></div>
                                         </div>
                                         <div class="d-flex justify-content-between w-full">
-                                            <h5 id="shortenedMonth" class="m-negative-l-20 m-negative-t-44">1</h5>
-                                            <h5 id="shortenedYear" class="m-negative-r-20 m-negative-t-44">2</h5>
+                                            <h5 id="shortenedMonth" class="m-negative-l-20 m-negative-t-44">{{ $tongThang }}</h5>
+                                            <h5 id="shortenedYear" class="m-negative-r-20 m-negative-t-44">{{ $tongnam }}</h5>
                                         </div>
                                     </div>
                                     <div class="peak-year-tower-absolute-children mt-3">
@@ -113,22 +119,22 @@
                                             <div class="peak-year-tower-in-side-left m-negative-l-16 m-negative-t-26"></div>
                                             <div class="peak-year-tower-in-side-right m-negative-r-16 m-negative-t-26"></div>
                                         </div>
-                                        <h5 id="shortenedDay" class="text-center m-negative-t-100">7</h5>
+                                        <h5 id="shortenedDay" class="text-center m-negative-t-100">{{ $tongngay }}</h5>
                                     </div>
                                     <div class="peak-year-tower-absolute-children-content">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="ms-custom mt-negative-custom text-age">17</h5>
-                                            <h5 class="me-custom mt-negative-custom text-age">26</h5>
+                                            <h5 class="ms-custom mt-negative-custom text-age">{{ $py }}</h5>
+                                            <h5 class="me-custom mt-negative-custom text-age">{{ $py2 }}</h5>
                                         </div>
                                     </div>
                                     <div class="peak-year-tower-absolute-children-content-1">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h5 id="shortenedDayAndMonth" class="ms-custom-1 mt-negative-custom-1">8</h5>
-                                            <h5 id="shortenedDayAndYear" class="me-custom-1 mt-negative-custom-1">9</h5>
+                                            <h5 id="shortenedDayAndMonth" class="ms-custom-1 mt-negative-custom-1">{{ $tonggoc1 }}</h5>
+                                            <h5 id="shortenedDayAndYear" class="me-custom-1 mt-negative-custom-1">{{ $tonggoc2 }}</h5>
                                         </div>
                                     </div>
-                                    <h5 id="shortenedMiddle" class="text-center mt-negative-custom-2 text-main-color">8</h5>
-                                    <h5 id="shortenedTop" class="text-center mt-negative-custom-3 text-main-color">6</h5>
+                                    <h5 id="shortenedMiddle" class="text-center mt-negative-custom-2 text-main-color">{{ $tonggoc3 }}</h5>
+                                    <h5 id="shortenedTop" class="text-center mt-negative-custom-3 text-main-color">{{ $tonggoc4 }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -148,24 +154,24 @@
                         <div class="w-full">
                             <div class="mt-negative-custom-5 d-flex justify-content-between bold">
                                 <div class="col-sm-6 text-left">
-                                    <p class="text-year">2017</p>
+                                    <p class="text-year">{{ $nampy }}</p>
                                 </div>
                                 <div class="col-sm-6 text-right">
-                                    <p class="text-year">2026</p>
+                                    <p class="text-year">{{ $nampy2 }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="w-full">
                             <div class="mt-negative-custom-6 d-flex justify-content-between bold">
                                 <div class="col-sm-12 text-right">
-                                    <p class="text-year">2035</p>
+                                    <p class="text-year">{{ $nampy3 }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="w-full">
                             <div class="mt-negative-custom-7 d-flex justify-content-between bold me-5">
                                 <div class="col-sm-12 text-left ms-5">
-                                    <p class="text-year ms-4">2044</p>
+                                    <p class="text-year ms-4">{{ $nampy4 }}</p>
                                 </div>
                             </div>
                         </div>
@@ -174,20 +180,28 @@
             </div>
             <div class="container">
                 <div class="main__result-box mt-4" data-aos="zoom-in-right">
-                    <h4>MỐC 2017 (17 Tuổi)</h4>
-                    <p>Trong Thần số học, chỉ số sứ mệnh giúp bạn biết cách đạt được mục tiêu của bạn, lớn và nhỏ. Sứ mệnh khác với số đường đời. Con số đường đời của bạn ám chỉ đến mục đích tổng thể lớn hơn của bạn. Chỉ số sứ mệnh của bạn tập trung nhiều hơn vào các đặc điểm, tính cách và số phận của bạn. Nhưng số đường đời và số mệnh của bạn có thể đi đôi với nhau. Theo thần số học, số đường đời của bạn cho bạn biết bạn đến cuộc đời này để làm gì, số sứ mệnh của bạn mô tả cách bạn tiếp tục thực hiện nó. Phép tính đơn giản của chúng tôi xác định số sứ mệnh giúp bạn xác định các đặc điểm chính của mình và nơi bạn xuất sắc trong cuộc sống. Không chỉ một giai đoạn của cuộc đời, mà con số này tác động vào mọi giai đoạn của cuộc đời bạn. Bạn có thể chọn một con đường đi, nhưng nó có thể không phải lúc nào cũng đúng. Chỉ số này giúp xác định con đường nào là con đường phù hợp sẽ khiến bạn hài lòng và mãn nguyện.</p>
+                    <h4>Đỉnh 1 - Năm {{ $nampy }} ({{ $py }} tuổi)</h4>
+                    @foreach($desc as $value)
+                        <p>{{ $value->peakYear_desc }}</p>
+                    @endforeach
                 </div>
                 <div class="main__result-box mt-4" data-aos="zoom-in-right">
-                    <h4>MỐC 2026 (26 Tuổi)</h4>
-                    <p>Trong Thần số học, chỉ số sứ mệnh giúp bạn biết cách đạt được mục tiêu của bạn, lớn và nhỏ. Sứ mệnh khác với số đường đời. Con số đường đời của bạn ám chỉ đến mục đích tổng thể lớn hơn của bạn. Chỉ số sứ mệnh của bạn tập trung nhiều hơn vào các đặc điểm, tính cách và số phận của bạn. Nhưng số đường đời và số mệnh của bạn có thể đi đôi với nhau. Theo thần số học, số đường đời của bạn cho bạn biết bạn đến cuộc đời này để làm gì, số sứ mệnh của bạn mô tả cách bạn tiếp tục thực hiện nó. Phép tính đơn giản của chúng tôi xác định số sứ mệnh giúp bạn xác định các đặc điểm chính của mình và nơi bạn xuất sắc trong cuộc sống. Không chỉ một giai đoạn của cuộc đời, mà con số này tác động vào mọi giai đoạn của cuộc đời bạn. Bạn có thể chọn một con đường đi, nhưng nó có thể không phải lúc nào cũng đúng. Chỉ số này giúp xác định con đường nào là con đường phù hợp sẽ khiến bạn hài lòng và mãn nguyện.</p>
+                    <h4>Đỉnh 2 - Năm {{ $nampy2 }} ({{ $py2 }} tuổi)</h4>
+                    @foreach($desc2 as $value)
+                        <p>{{ $value->peakYear_desc }}</p>
+                    @endforeach
                 </div>
                 <div class="main__result-box mt-4" data-aos="zoom-in-right">
-                    <h4>MỐC 2035 (35 Tuổi)</h4>
-                    <p>Trong Thần số học, chỉ số sứ mệnh giúp bạn biết cách đạt được mục tiêu của bạn, lớn và nhỏ. Sứ mệnh khác với số đường đời. Con số đường đời của bạn ám chỉ đến mục đích tổng thể lớn hơn của bạn. Chỉ số sứ mệnh của bạn tập trung nhiều hơn vào các đặc điểm, tính cách và số phận của bạn. Nhưng số đường đời và số mệnh của bạn có thể đi đôi với nhau. Theo thần số học, số đường đời của bạn cho bạn biết bạn đến cuộc đời này để làm gì, số sứ mệnh của bạn mô tả cách bạn tiếp tục thực hiện nó. Phép tính đơn giản của chúng tôi xác định số sứ mệnh giúp bạn xác định các đặc điểm chính của mình và nơi bạn xuất sắc trong cuộc sống. Không chỉ một giai đoạn của cuộc đời, mà con số này tác động vào mọi giai đoạn của cuộc đời bạn. Bạn có thể chọn một con đường đi, nhưng nó có thể không phải lúc nào cũng đúng. Chỉ số này giúp xác định con đường nào là con đường phù hợp sẽ khiến bạn hài lòng và mãn nguyện.</p>
+                    <h4>Đỉnh 3 - Năm {{ $nampy3 }} ({{ $py3 }} tuổi)</h4>
+                    @foreach($desc3 as $value)
+                        <p>{{ $value->peakYear_desc }}</p>
+                    @endforeach
                 </div>
                 <div class="main__result-box mt-4" data-aos="zoom-in-right">
-                    <h4>MỐC 2044 (44 Tuổi)</h4>
-                    <p>Trong Thần số học, chỉ số sứ mệnh giúp bạn biết cách đạt được mục tiêu của bạn, lớn và nhỏ. Sứ mệnh khác với số đường đời. Con số đường đời của bạn ám chỉ đến mục đích tổng thể lớn hơn của bạn. Chỉ số sứ mệnh của bạn tập trung nhiều hơn vào các đặc điểm, tính cách và số phận của bạn. Nhưng số đường đời và số mệnh của bạn có thể đi đôi với nhau. Theo thần số học, số đường đời của bạn cho bạn biết bạn đến cuộc đời này để làm gì, số sứ mệnh của bạn mô tả cách bạn tiếp tục thực hiện nó. Phép tính đơn giản của chúng tôi xác định số sứ mệnh giúp bạn xác định các đặc điểm chính của mình và nơi bạn xuất sắc trong cuộc sống. Không chỉ một giai đoạn của cuộc đời, mà con số này tác động vào mọi giai đoạn của cuộc đời bạn. Bạn có thể chọn một con đường đi, nhưng nó có thể không phải lúc nào cũng đúng. Chỉ số này giúp xác định con đường nào là con đường phù hợp sẽ khiến bạn hài lòng và mãn nguyện.</p>
+                    <h4>Đỉnh 4 - Năm {{ $nampy4 }} ({{ $py4 }} tuổi)</h4>
+                    @foreach($desc4 as $value)
+                        <p>{{ $value->peakYear_desc }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
