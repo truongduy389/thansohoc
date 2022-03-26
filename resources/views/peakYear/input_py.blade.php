@@ -28,29 +28,28 @@
                 <p>Unlock the milestones of your life</p>
                 <img src="/assets/img/achievement.png" alt="">
             </div>
-            
+            @foreach($customer as $value)
             <div class="col-lg-6 col-sm-12 d-flex flex-column align-items-start px-5 my-5">
-                <form action="{{ URL::to('insert') }}" method="post">
+                <form action="{{ URL::to('update/'.$value->customer_id) }}" method="post">
                     {{ csrf_field() }}
                 <div class="login-email px-3">
-                    <input type="text" name="namepy" id="" placeholder="Họ và tên" required="">
+                    <input type="text" name="namepy" value="{{ $value->customer_name }}" placeholder="Họ và tên" required="">
                 </div>
                 <div class="login-email mt-4 px-3">
                     <input type="email" name="emailpy" id="" placeholder="Email" required="">
                 </div>
                 <div class="login-email mt-4 px-3">
-                    <input type="text" name="phonepy" id="" placeholder="Số điện thoại" required="">
+                    <input type="text" name="phonepy"  placeholder="Số điện thoại" required="">
                 </div>
                 <div class="login-email mt-4 px-3">
-                    <input id="dob" type="date" id="start" name="datepy" min="1900-01-01" required="">
+                    <input id="dob" type="date" id="start" name="datepy"  value="{{ $value->customer_date }}" min="1900-01-01" required="">
                 </div>
                 <button type="submit" class="mt-4">Kết quả</button>
             </form>
             </div>
-           
+           @endforeach
         </div>
     </div>
-
     <!-- Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

@@ -12,6 +12,8 @@ html {font-family: 'Roboto', sans-serif;}
 
 .text-main-color {color: #b300b3 !important;}
 
+.hv-purple:hover {color: #b300b3 !important;}
+
 .bg-main-color {background: #b300b3 !important;}
 
 p {color: #333 !important; font-size: 16px; line-height: 28px;}
@@ -21,6 +23,8 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 .fwn {font-weight: normal !important;}
 
 .text-blue {color: #004080 !important;}
+
+.text-white {color: #fff}
 
 .text-blue:hover {cursor: pointer !important; color: orange !important;}
 
@@ -168,7 +172,7 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 #main {padding-top: 70px;}
 
 .main__slider {
-    background-image: url("/assets/img/background.jpg");
+    background-image: url("{{ ('../public/assets/img/background.jpg') }}");
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
@@ -446,9 +450,11 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 .main__result-box button:hover {
     cursor: pointer;
     background-color: #fff;
-    color: #b300b3;
+    color: #b300b3 !important;
     border: 2px solid #b300b3;
 }
+
+.main__result-box button .text-white:hover {color:#b300b3 !important;}
 
 /* --- Result Page End --- */
 
@@ -555,7 +561,7 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 .main__nav-item-active,
 .main__body-admin-nav-item:hover {
     cursor: pointer;
-    background-color: #fff;
+    background-color: #fff !important;
     color: #333;
     border-radius: 10px;
 }
@@ -587,7 +593,7 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 }
 
 .main__body-admin-sum-answer-content-list {
-    height: 66vh;
+    height: 64vh;
     font-size: 20px;
     font-weight: bold;
     overflow-x: scroll;
@@ -606,7 +612,7 @@ p {color: #333 !important; font-size: 16px; line-height: 28px;}
 }
 
 .main__body-admin-body-right-list {
-    height: 82vh;
+    height: 70vh;
     overflow-x: scroll;
     overflow-y: scroll;
 }

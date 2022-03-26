@@ -21,6 +21,10 @@
 
 </head>
 <body>
+    <?php
+        $custom = Session::get('customer_id');
+        //var_dump($custom);
+        ?>
     <div id="header">
         <div id="header">
             <div class="container header__container p-3">
@@ -87,7 +91,7 @@
         <div class="main__result pb-5">
             <div class="container p-3 py-5 d-flex">
                 <div class="main__result-box">
-                    
+                    <input type="hidden" class="hidden" value="{{ $ip }}">
                     <h2 data-aos="fade-up">HỌ VÀ TÊN: <span>{{ $ten }}</span></h2>
                     <h2 data-aos="fade-up" data-aos-delay="500">NGÀY SINH: 
                     <span>{{ $date }}</span></h2>
@@ -123,7 +127,7 @@
                 <div class="main__result-box mt-4 d-flex flex-column align-items-center" data-aos="zoom-in-left">
                     <h4>XEM THÊM CÁC CỘT MÓC QUAN TRỌNG CỦA BẠN VỚI PEAK YEAR</h4>
                     
-                    <button><a href="{{ URL::to('/peak-year') }}">XEM NGAY</a></button>
+                    <button class="hv-purple"><a class="text-white hv-purple"href="{{ URL::to('/peak-year/'.Session::get('customer_id')) }}">XEM NGAY</a></button>
                    
                 </div>
             </div>
@@ -135,10 +139,10 @@
                 <h4>THẦN SỐ HỌC VIỆT NAM</h4>
                 <p class="pt-2 pe-5">Công cụ tra cứu thần số học Online của Thần Số Học Việt Nam cứu theo chính xác ngày tháng năm sinh và tên của bạn. Chúng tôi cung cấp hoàn toàn miễn phí và sẽ luôn là như vậy!</p>
                 <div class="social-media mt-3 d-flex">
-                    <img src="/assets/img/icon-fb.png" alt="">
-                    <img src="/assets/img/telegram.png" alt="">
-                    <img src="/assets/img/twitter.png" alt="">
-                    <img src="/assets/img/youtube.png" alt="">
+                    <img src="{{ asset ('public/assets/img/icon-fb.png') }}" alt="">
+                    <img src="{{ asset ('public/assets/img/telegram.png') }}" alt="">
+                    <img src="{{ asset ('public/assets/img/twitter.png') }}" alt="">
+                    <img src="{{ asset ('public/assets/img/youtube.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12 py-4">

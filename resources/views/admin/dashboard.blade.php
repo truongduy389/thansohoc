@@ -32,7 +32,7 @@
                     <h2 class="ps-2">Thần số học</h2>
                 </div>
                 <div class="main__body-admin-nav-item mx-3">
-                    <h2 class="ps-2"><a href="{{ URL::to('/add-py') }}">Peak Year</a></h2>
+                    <h2 class="ps-2"><a class="text-white" href="{{ URL::to('/add-py') }}">Peak Year</a></h2>
                 </div>
             </div>
             <div>
@@ -79,6 +79,7 @@
                                         <th scope="col">Số điện thoại</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Ngày sinh</th>
+                                        <th scope="col">Giới tính</th>
                                         <th scope="col">Số Chu Dao</th>
                                     </tr>
                                 </thead>
@@ -90,6 +91,15 @@
                                         <td>0{{$value['customer_phone']}}</td>
                                         <td>{{$value['customer_email']}}</td>
                                         <td>{{$value['customer_date']}}</td>
+                                        <td>
+                                            <?php
+                                            if($value['customer_gender']==1){
+                                            echo "Nam";
+                                        }else{
+                                            echo "Nữ";
+                                        }
+                                        ?>
+                                        </td>
                                         <td>{{$value['customer_sochudao']}}</td>
                                     </tr>
                                     
@@ -103,7 +113,9 @@
             <div class="col-lg-7 py-3 pe-3">
                 <div class="main__body-admin-body-right p-3">
                     <h1>Danh sách các thần số học</h1>
-                    <h1><a href="{{ URL::to('/add-thanso') }}">Thêm thần số</a></h1>
+                    <div class="btn btn-primary mt-2">
+                        <a class="text-white" href="{{ URL::to('/add-thanso') }}">Thêm thần số</a>
+                    </div>
                     <div class="main__body-admin-body-right-list mt-3">
                         <table class="table table-striped fz-16">
                             <thead>

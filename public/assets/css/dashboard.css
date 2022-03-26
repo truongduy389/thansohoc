@@ -1,0 +1,94 @@
+.main__body-dashboard {
+    width: 100%;
+    height: 100%;
+}
+
+.main__body-dashboard .col-md-12:first-child {
+    width: 100%;
+    height: 45%;
+}
+
+.main__body-dashboard .col-md-12:last-child {
+    width: 100%;
+    height: 55%;
+}
+
+.main__body-dashboard .col-md-4 {
+    height: 100%;
+}
+
+.main__body-dashboard-item {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.main__body-dashboard h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.main__body-dashboard h1 {
+    font-size: 100px;
+    padding: 20px 0;
+    font-weight: bold;
+    color: orange;
+}
+
+.main__body-dashboard-item-nation {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.main__body-dashboard-item-nation-content-column {
+    width: 100%;
+    height: 100%;
+    background-color: orange
+}
+
+.nation-count {
+    font-weight: bold;
+}
+
+canvas {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.square-accset {
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+}
+
+#colorMale {background-color: #00aba9;}
+#colorFemale {background-color: #ffa500;}
+
+#listManagement .active,
+#listManagement li:hover {color: #ffa500;}
+
+
+.main__body-admin-nav-item  button {
+    border: none;
+    overflow: unset;
+    background-color: unset;
+    width: 100%;
+    text-align: left;
+}
+
+.main__nav-item-active button {
+    color:  #000;
+}
+
+.hv-specific:hover button {color: #000 !important;}
+
+.main__managerment-index {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.main__managerment-index table {width: 100%;}
+
+.main__managerment-index h1 {font-size: 24px; font-weight: bold}

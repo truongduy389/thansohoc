@@ -22,10 +22,25 @@ class AdminController extends Controller
         return view('admin.login'); 
     }
 
-    public function show_dashboard(){
+    public function customer_list(){
         $customer = CustomerModel::all();
+        return view('admin.managerment')->with(compact('customer'));
+    }
+
+    public function thansohoc_list(){
+        $thansohoc = SochudaoModel::all();
+        return view('admin.managerment_TSH')->with(compact('thansohoc'));
+    }
+
+    public function peakyear_list(){
+        $peakyear = PeakYearModel::all();
+        return view('admin.managerment_peakyear')->with(compact('peakyear'));
+    }
+
+    public function show_dashboard(){
+        $customer = CustomerModel::orderBy('customer_id','desc')->limit(5)->get();
         $sochudao = SochudaoModel::all();
-        return view('admin.dashboard')->with(compact('customer','sochudao'));
+        return view('admin.dashboard_index')->with(compact('customer','sochudao'));
     }
 
     public function dashboard(Request $request){
@@ -56,7 +71,7 @@ class AdminController extends Controller
         $result=SochudaoModel::insert($data);
         if($result){
             Session::put('message','Success');
-            return Redirect::to('/dashboard');
+            return Redirect::to('/thansohoc-list');
         }else{
             echo "Insert that bai.";
         }
@@ -75,11 +90,21 @@ class AdminController extends Controller
         if($result){
             Session::put('message','Success');
             return redirect()->back();
+        }else{
+            echo " that bai.";
         }
     }
 
     public function delete($so_id){
         $result=SochudaoModel::where('sochudao_id', $so_id)->delete();
+        if($result){
+            Session::put('message','Success');
+            return redirect()->back();
+        }
+    }
+
+    public function delete_customer($customerId){
+        $result=CustomerModel::where('customer_id', $customerId)->delete();
         if($result){
             Session::put('message','Success');
             return redirect()->back();
@@ -98,7 +123,7 @@ class AdminController extends Controller
         $result=PeakYearModel::insert($data);
         if($result){
             Session::put('message','Success');
-            return Redirect::to('/dashboard');
+            return Redirect::to('/peakyear-list');
         }else{
             echo "Insert that bai.";
         }

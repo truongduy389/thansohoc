@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/style.css')}}">
 
 </head>
+
 <body>
     <div id="header">
         <div class="container header__container p-3">
@@ -174,16 +175,16 @@
                     <h3>TRA CỨU THẦN SỐ HỌC PITAGO MIỄN PHÍ</h3>
                     <form action="{{URL::to('/tra-cuu')}}" method="request">
                         {{csrf_field()}}
+                    
                     <input type="text" name="name" id="" placeholder="Họ và tên">
                     <div class="d-flex flex-wrap mt-3">
                        <div class="col-lg-6 col-sm-12 pe-3">
                             <input id="dob" type="date" id="start" name="date" min="1900-01-01">
                        </div>
                        <div class="col-lg-6 col-sm-12">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected value="1">Nam</option>
-                                <option value="2">Nữ</option>
-                                <option value="3">Khác</option>
+                            <select class="form-select" name="gender" >
+                                <option value="1">Nam</option>
+                                <option value="0">Nữ</option>
                             </select>
                         </div>
                     </div>

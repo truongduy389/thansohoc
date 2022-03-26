@@ -30,6 +30,12 @@ Route::get('/logout', [App\Http\Controllers\AdminController::class, 'logout'])->
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'show_dashboard'])->name('show_dashboard');
 Route::post('/admin-dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
 
+Route::get('/customer-list', [App\Http\Controllers\AdminController::class, 'customer_list'])->name('customer_list');
+Route::get('/thansohoc-list', [App\Http\Controllers\AdminController::class, 'thansohoc_list'])->name('thansohoc_list');
+Route::get('/peakyear-list', [App\Http\Controllers\AdminController::class, 'peakyear_list'])->name('peakyear_list');
+
+Route::get('/delete-customer/{customerId}', [App\Http\Controllers\AdminController::class, 'delete_customer'])->name('delete_customer');
+
 
 Route::get('/manager-edit/{sochudao_id}', [App\Http\Controllers\AdminController::class, 'edit_sochudao'])->name('edit_sochudao');
 Route::get('/delete/{so_id}', [App\Http\Controllers\AdminController::class, 'delete'])->name('delete');
@@ -44,6 +50,8 @@ Route::post('/edit-peakyear/{id_py}', [App\Http\Controllers\AdminController::cla
 Route::get('/delete-py/{peak_id}', [App\Http\Controllers\AdminController::class, 'delete_py'])->name('delete_py');
 
 //Peak Year
-Route::get('/peak-year', [App\Http\Controllers\HomeController::class, 'peak_year'])->name('peak_year');
-Route::get('/result-py', [App\Http\Controllers\HomeController::class, 'result_py'])->name('result_py');
-Route::post('/insert', [App\Http\Controllers\HomeController::class, 'insert'])->name('insert');
+Route::get('/peak-year/{idCus}', [App\Http\Controllers\HomeController::class, 'peak_year'])->name('peak_year');
+Route::get('/result-py/{custom_id}', [App\Http\Controllers\HomeController::class, 'result_py'])->name('result_py');
+Route::post('/update/{cus_id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
+
+Route::get('/download-pdf/{customer_id}',[App\Http\Controllers\HomeController::class, 'download'])->name('download');

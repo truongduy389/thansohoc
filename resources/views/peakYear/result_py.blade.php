@@ -18,10 +18,9 @@
 
 </head>
 <body>
-    <?php
-        $cus = Session::get('customer_id');
-        var_dump($cus);
-    ?>
+    <?php $cus=Session::get('customer_id');
+                        //var_dump($cus);
+                   ?>
     <div id="header">
         <div id="header">
             <div class="container header__container p-3">
@@ -203,6 +202,12 @@
                         <p>{{ $value->peakYear_desc }}</p>
                     @endforeach
                 </div>
+                <div class="main__result-box mt-4 d-flex flex-column align-items-center" data-aos="zoom-in-left">
+                    {{-- <h4>XEM THÊM CÁC CỘT MÓC QUAN TRỌNG CỦA BẠN VỚI PEAK YEAR</h4> --}}
+                   <a href="https://www.facebook.com/thetatsuyastore/">Trang FACEBOOK của chúng tôi.</a>
+                    <button class="hv-purple"><a class="text-white hv-purple"href="{{ URL::to('/download-pdf/'.Session::get('customer_id')) }}">Export PDF</a></button>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -212,10 +217,10 @@
                 <h4>THẦN SỐ HỌC VIỆT NAM</h4>
                 <p class="pt-2 pe-5 text-white">Công cụ tra cứu thần số học Online của Thần Số Học Việt Nam cứu theo chính xác ngày tháng năm sinh và tên của bạn. Chúng tôi cung cấp hoàn toàn miễn phí và sẽ luôn là như vậy!</p>
                 <div class="social-media mt-3 d-flex">
-                    <img src="/assets/img/icon-fb.png" alt="">
-                    <img src="/assets/img/telegram.png" alt="">
-                    <img src="/assets/img/twitter.png" alt="">
-                    <img src="/assets/img/youtube.png" alt="">
+                    <img src="{{ asset ('public/assets/img/icon-fb.png') }}" alt="">
+                    <img src="{{ asset ('public/assets/img/telegram.png') }}" alt="">
+                    <img src="{{ asset ('public/assets/img/twitter.png') }}" alt="">
+                    <img src="{{ asset ('public/assets/img/youtube.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12 py-4">
