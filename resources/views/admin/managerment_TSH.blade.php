@@ -72,7 +72,7 @@
       <div class="main__body-admin-body d-flex flex-wrap col-lg-10 p-3">
         <div class="main__managerment-index p-3">
             <div class="d-flex justify-content-between align-items-center">
-                <h1>Danh sách các thần số học</h1>
+                <h1>Danh sách thần số học</h1>
                 <button class="btn btn-primary"><a class="text-white" href="{{ URL::to('/add-thanso') }}">Thêm thần số học</a></button>
             </div>
             <p class="mt-3">

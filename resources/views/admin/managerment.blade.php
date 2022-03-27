@@ -71,7 +71,7 @@
       </div>
       <div class="main__body-admin-body d-flex flex-wrap col-lg-10 p-3">
         <div class="main__managerment-index p-3">
-          <h1>Danh sách các câu trả lời</h1>
+          <h1>Danh sách tra cứu</h1>
           <p class="mt-3">
             <?php
             $message = Session::get('message');

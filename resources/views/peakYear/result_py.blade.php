@@ -29,7 +29,7 @@
                         <h1 class="text-main-color">XemBoi24H</h1>
                     </div>
                     <div class="header__container-nav d-flex justify-content-end align-items-center col-md-6">
-                        <a class="pe-4" href="#">Trang chủ</a>
+                        <a class="pe-4" href="{{ URL::to('/trangchu') }}">Trang chủ</a>
                         <div class="pe-4">
                             <div class="dropdown">
                                 <a class="dropbtn">Kiến thức <span><i class="fa-solid fa-caret-down"></i></span></a>
