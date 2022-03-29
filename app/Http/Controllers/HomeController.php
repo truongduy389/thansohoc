@@ -19,7 +19,7 @@ class HomeController extends Controller
 {
     public function getindex(){
 
-        return view('welcome');
+        return view('index');
     }
     public function search(Request $request){
         $data=array();

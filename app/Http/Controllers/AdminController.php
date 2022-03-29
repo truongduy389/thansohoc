@@ -39,6 +39,14 @@ class AdminController extends Controller
 
     public function show_dashboard(){
         $customer = CustomerModel::orderBy('customer_id','desc')->limit(5)->get();
+        // foreach($customer as $value){
+        //     $name = $value->customer_name;
+        //     $gender = $value->customer_gender;
+        //     echo $gender;
+        //     echo $name;
+        //     exit();
+        // }
+
         $sochudao = SochudaoModel::all();
         return view('admin.dashboard_index')->with(compact('customer','sochudao'));
     }

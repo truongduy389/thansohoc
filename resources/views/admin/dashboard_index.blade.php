@@ -118,6 +118,7 @@
                                     <tbody class="fwn">
                                         @foreach($customer as $value)
                                         <tr>
+                                            
                                             <th style="width: 50px" scope="row">{{ $value->customer_id }}</th>
                                             <td>{{ $value->customer_name }}</td>
                                             <td class="sexAccest">
