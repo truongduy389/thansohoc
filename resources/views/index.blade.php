@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="description" content="Tra cứu thần số học, nhân số học Pitago online tại Thần Số Việt Nam bạn sẽ có được kết quả chính xác và miễn phí về các con số chủ đạo....">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="than so, thần số, than so hoc, thần số học, xem boi, xem bói, thần số học việt nam"/>
+    <meta name="robots" content="INDEX,FOLLOW"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 
@@ -26,7 +29,7 @@
         <div class="container header-pc">
             <div class="header__navbar d-flex justify-content-between p-3">
                 <div class="col-md-4">
-                    <h1>TRA CỨU THẦN SỐ HỌC</h1>
+                    <h1><a href="{{ URL::to('/trangchu') }}">TRA CỨU THẦN SỐ HỌC</a></h1>
                 </div>
                 <div class="col-md-8 d-flex justify-content-end text-center">
                     <a href="#">Trang chủ</a>
@@ -45,7 +48,7 @@
                 <div class="container header__container p-3">
                     <div class="d-flex justify-content-between">
                         <div class="header__container-nav d-flex flex-column">
-                            <a href="#">Trang chủ</a>
+                            <a href="{{ URL::to('/trangchu') }}">Trang chủ</a>
                             <a href="#">Kiến thức</a>
                             <a href="#">Về chúng tôi</a>
                         </div>
@@ -126,15 +129,26 @@
                             <div class="main__content-form-answer-pa-box-items p-5" style="margin-bottom:90px;">
                                 <form action="{{URL::to('/tra-cuu')}}" method="request">
                                     {{csrf_field()}}
+                                    @foreach($errors->all() as $error)
+                                    {{ $error }}
+                                    @endforeach
                                 <input type="text" name="name" id="" placeholder="Họ và tên">
                                 <input id="dob" type="date" id="start" name="date" min="1900-01-01">
                                 <select class="form-select" name="gender" aria-label="Default select example">
                                     <option  value="1">Nam</option>
                                     <option value="0">Nữ</option>
+                                    <option value="2">Khác</option>
                                 </select>
                                 <div class="d-flex justify-content-center">
                                     <input class="mt-4 main-bg-color text-white hv-main" type="submit" value="Tra cứu miễn phí">
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+                        <br/>
+                        @if($errors->has('g-recaptcha-response'))
+                        <span class="invalid-feedback" style="display:block">
+                            <strong>{{$errors->first('g-recaptcha-response')}}</strong>
+                        </span>
+                        @endif
                                 </form>
                             </div>
                         </div>
@@ -269,7 +283,7 @@
 
     <!-- JavaScript -->
     <script src="./asssets/js/js.js"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--- **************** -->
 
 </body>

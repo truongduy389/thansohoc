@@ -125,8 +125,10 @@
                                                 <?php
                                                     if($value['customer_gender']==1){
                                                     echo "Nam";
-                                                }else{
+                                                }else if($value['customer_gender']==0){
                                                     echo "Nữ";
+                                                }else{
+                                                    echo "Khác";
                                                 }
                                                 ?>
                                             </td>

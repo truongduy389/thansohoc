@@ -26,7 +26,7 @@
             <div class="container header__container p-3">
                 <div class="d-flex justify-content-between">
                     <div class="col-md-6 d-flex align-items-center">
-                        <h1 class="text-main-color">XemBoi24H</h1>
+                        <h1 class="text-main-color"><a href="{{ URL::to('/trangchu') }}">Tra cứu thần số học</a></h1>
                     </div>
                     <div class="header__container-nav d-flex justify-content-end align-items-center col-md-6">
                         <a class="pe-4" href="{{ URL::to('/trangchu') }}">Trang chủ</a>

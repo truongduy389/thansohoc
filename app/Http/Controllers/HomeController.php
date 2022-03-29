@@ -10,6 +10,8 @@ use Illuminate\Support\Collection;
 use App\Http\Requests;
 use Carbon\Carbon;
 use PDF;
+use App\Rules\Captcha; 
+use Validator;
 use App\Models\CustomerModel;
 use App\Models\SochudaoModel;
 use App\Models\PeakYearModel;
@@ -22,6 +24,14 @@ class HomeController extends Controller
         return view('index');
     }
     public function search(Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'date' => 'required',
+            'gender' => 'required',
+            
+           'g-recaptcha-response' => new Captcha(), 		//dòng kiểm tra Captcha
+        ]);
+
         $data=array();
         $data['customer_name']=$request->name;
         $data['customer_date']=$request->date;
