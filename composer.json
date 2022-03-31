@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.0.2",
         "barryvdh/laravel-snappy": "^1.0",
+        "biscolab/laravel-recaptcha": "^5.3",
         "buzz/laravel-google-captcha": "^2.3",
         "guzzlehttp/guzzle": "^7.2",
         "knplabs/knp-snappy": "^1.4",
