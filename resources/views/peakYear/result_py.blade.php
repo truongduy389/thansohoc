@@ -205,7 +205,7 @@
                 <div class="main__result-box mt-4 d-flex flex-column align-items-center" data-aos="zoom-in-left">
                     {{-- <h4>XEM THÊM CÁC CỘT MÓC QUAN TRỌNG CỦA BẠN VỚI PEAK YEAR</h4> --}}
                    <a href="https://www.facebook.com/thetatsuyastore/">Trang FACEBOOK của chúng tôi.</a>
-                    <button class="hv-purple"><a class="text-white hv-purple"href="{{ URL::to('/download-pdf/'.Session::get('customer_id')) }}">Export PDF</a></button>
+                   <a target="_blank" class="text-white hv-purple"href="{{ URL::to('/download-pdf/'.Session::get('customer_id')) }}"><button class="hv-purple">Export PDF</button></a>
                     
                 </div>
             </div>

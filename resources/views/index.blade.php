@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('./public/asssets/css/base.css') }}">
     <link rel="stylesheet" href="{{ asset('./public/asssets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('./public/asssets/css/responsive.css') }}">
-
+    
     <meta name="csrf-token" content="{{ csrf_token() }}">
         <script type="text/javascript">
         function callbackThen(response) {
@@ -52,7 +52,7 @@
         <div class="container header-pc">
             <div class="header__navbar d-flex justify-content-between p-3">
                 <div class="col-md-4">
-                    <h1>TRA CỨU THẦN SỐ HỌC</h1>
+                    <h1><a href="{{ URL::to('/trangchu') }}">TRA CỨU THẦN SỐ HỌC</a></h1>
                 </div>
                 <div class="col-md-8 d-flex justify-content-end text-center">
                     <a href="#">Trang chủ</a>
@@ -87,7 +87,7 @@
                         <div class="p-3">
                             <h2 class="pt-3">KHÁM PHÁ BẢN THÂN THÔNG QUA</h2>
                             <h1 class="pt-3">THẦN SỐ HỌC</h1>
-                            <button>TRA CỨU NGAY</button>
+                            <button class="main-bg-color text-white">TRA CỨU NGAY</button>
                         </div>
                     </div>
                     <div class="main__banner-special-link d-flex flex-wrap">
@@ -109,14 +109,14 @@
                             <div class="main__banner-special-link-item d-flex flex-column justify-content-center align-items-center p-3 text-center">
                                 <img src="./public/asssets/image/mission.png" alt="">
                                 <h2 class="py-3">Chỉ số sứ mệnh</h2>
-                                <p>Cách bạn và con đường bạn thực hiện chỉ số đường đời như thế nào?</p>
+                                <p>Tiết lộ bạn sinh ra để làm gì? Trở thành người như thế nào?</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 p-3">
                             <div class="main__banner-special-link-item d-flex flex-column justify-content-center align-items-center p-3 text-center">
                                 <img src="./public/asssets/image/list.png" alt="">
                                 <h2 class="py-3">+8 Chỉ số khác</h2>
-                                <p>Hoàn toàn MIỄN PHÍ và luôn như vậy!</p>
+                                <p>Truy cập để xem ngay - Hoàn toàn MIỄN PHÍ!</p>
                             </div>
                         </div>
                     </div>
@@ -141,32 +141,32 @@
                 <div class="main__content-form-answer-pa">
                     <div class="container px-4 py-3 h-full d-flex flex-column justify-content-center">
                         <div class="text-center text-white">
-                            <h2>BẮT ĐẦU QUÁ TRÌNH BẢN THÂN <br/> THÔNG QUA NHỮNG CON SỐ</h2>
-                            <p class="py-4">Chào mừng bạn đến với hành trình khám phá bản thân thông qua những con số. Mục tiêu của chúng tôi là hỗ trợ bạn trong hành trình nhận thức <br/> sâu sắc về bản ngã trở nên tự tin hơn. Từ đó bạn có thể hiểu bản thân mình hơn và tạo ra hướng đi đúng đắn cho bản thân</p>
+                            <h2>
+                                BẤT ĐẦU HÀNH TRÌNH KHÁM PHÁ BẢN THÂN <br> THÔNG QUA NHỮNG CON SỐ
+                            </h2>
+                            <p class="py-4">Chào mừng bạn đến với hành trình khám phá bản thân thông qua những con số. Mục tiêu của chúng tôi là hỗ trợ bạn trong hành trình nhận thức sâu sắc về bản ngã và trở nên tự tin hơn. Từ đó bạn có thể hiểu bản thân mình hơn và tạo ra hướng đi đúng đắn cho bản thân.</p>
                         </div>
-                        <div class="  main__content-form-answer-pa-box px-5 pt-4 mx-5">
-                            <div class="main__content-form-answer-pa-box-items p-5" style="margin-bottom:90px;">
-                                <form id='tracuu_form' action="{{URL::to('/tra-cuu')}}" method="request">
-                                    {{csrf_field()}}
-                                <label style="font-size:1.2rem;">Nhập đầy đủ Họ và Tên: </label>
-                                <input type="text" name="name" id="field" placeholder="Điền họ và tên">
-                                <label style="font-size:1.2rem;">Chọn ngày, tháng, năm sinh dương lịch: </label>
-                                <input id="dob" type="date" id="start" name="date" min="1900-01-01" placeholder="Điền ngày tháng năm sinh">
-                                <label style="font-size:1.2rem;">Chọn giới tính phù hợp: </label>
-                                <select class="form-select" name="gender" aria-label="Default select example" placeholder="Điền họ và tên">
-                                    <option value="1">Nam</option>
-                                    <option value="0">Nữ</option>
-                                    <option value="2">Khác</option>
-                                </select>
-                                
-                                <div class="d-flex justify-content-center">
-                                    <input class=" mt-4 main-bg-color text-white hv-main"data-sitekey="your_site_key" data-callback='onSubmit' type="submit" value="Tra cứu miễn phí">
-                                </div>
-                                Trang web này được bảo vệ bởi reCAPTCHA và Google
-                                        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-                                        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-                                </form>
+                        <div class="main__content-form-answer-pa-box-items p-5">
+                            <form id='tracuu_form' action="{{URL::to('/tra-cuu')}}" method="request">
+                                {{csrf_field()}}
+                            <label class="ps-1 pb-2" style="font-size:1rem;">Nhập đầy đủ Họ và Tên: </label>
+                            <input type="text" name="name" id="field" placeholder="Điền họ và tên">
+                            <label class="ps-1 pb-2" style="font-size:1rem;">Chọn ngày, tháng, năm sinh dương lịch: </label>
+                            <input id="dob" type="date" id="start" name="date" min="1900-01-01" placeholder="Điền ngày tháng năm sinh">
+                            <label class="ps-1 pb-2" style="font-size:1rem;">Chọn giới tính phù hợp: </label>
+                            <select class="form-select" name="gender" aria-label="Default select example" placeholder="Điền họ và tên">
+                                <option value="1">Nam</option>
+                                <option value="0">Nữ</option>
+                                <option value="2">Khác</option>
+                            </select>
+                            <p style="font-size: 12px; padding-top:10px;">Trang web này được bảo vệ bởi reCAPTCHA và Google
+                                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                                <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+                            <div class="d-flex justify-content-center">
+                                <input class=" mt-4 main-bg-color text-white hv-main"data-sitekey="your_site_key" data-callback='onSubmit' type="submit" value="Tra cứu miễn phí">
                             </div>
+                            
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -177,7 +177,8 @@
                         <img src="./public/asssets/image/ahitcorp-thansohoc-gioi-thieu-2.jpg" alt="">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center px-5">
-                        <h1 class="py-3">CÁC CON SỐ TRONG THẦN <br/> SỐ HỌC CÓ Ý NGHĨA GÌ?</h1>
+                        <h1 class="py-3">Ý NGHĨA CÁC CON SỐ <br>
+                            TRONG THẦN SỐ HỌC</h1>
                         <p class="py-2 main-para-color">Sự thật là mỗi người trong chúng ta đều sở hữu cho mình một bản đồ số. Nó mô tả đa dạng về tính cách, giá trị cốt lõi, thế mạnh, điểm hạn chế, vận mệnh và con đường đời của mình.
                         </p>
                         <p class="py-2 main-para-color">
@@ -186,7 +187,7 @@
                         <ul class="main-para-color">
                             <li>Con số đường đời: Con số thể hiện những tính cách ẩn sâu trong bạn được tính qua ngày tháng năm sinh của bạn. Đây chính là con số chủ đạo của bạn trong Thần số học.</li>
                             <li>Chỉ số linh hồn: Chỉ số linh hồn là con số được thể hiện qua các cảm xúc, giác quan và khát vọng về nội tâm bên trong bạn…</li>
-                            <li>Thần số học ứng dụng: Giúp bạn rèn luyện trực giác của bản thân tốt hơn. Từ đó có cái nhìn hiểu rõ hơn những người xung quan mình.</li>
+                            <li>Thần số học ứng dụng: Giúp bạn rèn luyện trực giác của bản thân tốt hơn. Từ đó có cái nhìn hiểu rõ hơn những người xung quanh mình.</li>
                             <li>Cách tính Thần Số Học: Dựa vào họ tên và ngày tháng năm sinh của bạn để có thể quy đổi ra các con số rồi cộng chúng lại với nhau. Từ đó ta có được con số chủ đạo của bạn….
                             </li>
                         </ul>
@@ -198,14 +199,12 @@
                     <div class="main__content-quesion d-flex justify-content-between px-3 py-2 flex-wrap-reverse">
                         <div class="col-lg-6 d-flex flex-column justify-content-center pe-5">
                             <h1 class="py-3">TRA CỨU THẦN SỐ HỌC ONLINE - MIỄN PHÍ CÓ TIN ĐƯỢC KHÔNG?</h1>
-                            <p class="py-2 main-para-color">
-                                Tra cứu thần số học khác với các loại bói toán tâm linh khác.
+                            <p class="py-2 main-para-color">Nguồn gốc của nó là trong các công thức toán học phức hợp và nó có cùng kết quả giống nhau khi xem trực tiếp và sử dụng công cụ online.
                             </p>
                             <p class="py-2 main-para-color">
                                 Các chỉ số thần số học được tổng hợp từ ngày sinh, tên và sự bù trừ của tên và ngày sinh. Khi tra cứu thần số học online, bạn sẽ có được 1 bản đầy đủ và chi tiết các chỉ số, có những chỉ số dễ tính như số chủ đạo, linh hồn…
                             </p>
-                            <p class="py-2 main-para-color">Nguồn gốc của nó là trong các công thức toán học phức hợp và nó có cùng kết quả giống nhau khi xem trực tiếp và sử dụng công cụ online.
-                            </p>
+                            
                         </div>
                         <div class="col-lg-6 d-flex justify-content-end">
                             <img src="./public/asssets/image/ahitcorp-thansohoc-gioi-thieu-3.jpg" alt="">
@@ -216,78 +215,73 @@
             <div class="main__list-users-review">
                 <div class="container text-center">
                     <h1>ĐÁNH GIÁ CỦA NGƯỜI XEM <br/> NHÂN SỐ HỌC ONLINE</h1>
-                    <div class="main__list-users-review-box px-5">
+                    <div class="main__list-users-review-box px-5 d-flex justify-content-center">
                         <div class="d-flex">
-                            <div class="left img-routes d-flex align-items-center justify-content-start">
-                                <img id="left-button" src="./public/asssets/image/down-chevron.png" alt="">
+                            <div class="left img-routes d-flex align-items-center justify-content-end mpe">
+                                <img id="left-button" src="./public/asssets/image/down-chevron.png" alt="" onclick="prevBtn()">
                             </div>
                             <div class="center d-flex justify-content-between" id="content">
                                 <div id="card-review" class="internal col-md-4 col-sm-12">
-                                    <div class="main__list-user-list-item disabled-cart">
                                         <div class="main__list-user-list-item d-flex flex-column align-items-center justify-content-center">
                                             <img src="./public/asssets/image/ahitcorp-thansohoc-nhanxetkhachhang-1.png" alt="">
                                             <div class="px-3 w-full">
                                                 <h3 class="bold py-3">Nguyễn Thanh Hải</h3>
                                                 <p class="lh-0 main-para-color">Security</p>
+                                                <p class="d-none">“Tôi thật sự bất ngờ với kết quả khi xem thần số học ở đây. Nó quá đúng với cảm nhận của tôi”</p>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="internal col-md-4 col-sm-12">
-                                    <div class="main__list-user-list-item">
                                         <div class="main__list-user-list-item d-flex flex-column align-items-center justify-content-center">
                                             <img src="./public/asssets/image/ahitcorp-thansohoc-nhanxetkhachhang-2.png" alt="">
                                             <div class="px-3 w-full">
-                                                <h3 class="bold py-3 main-text-color">Nam Le Le</h3>
+                                                <h3 class="bold py-3">Nam Le Le</h3>
                                                 <p class="lh-0 main-para-color">Security</p>
+                                                <p class="d-none">“Kết quả cụ thể và chi tiết. Tôi nghĩ nó đúng với tính cách của tôi đấy chứ!”</p>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="internal col-md-4 col-sm-12">
-                                    <div class="main__list-user-list-item disabled-cart">
                                         <div class="main__list-user-list-item d-flex flex-column align-items-center justify-content-center">
                                             <img src="./public/asssets/image/ahitcorp-thansohoc-nhanxetkhachhang-3.png" alt="">
                                             <div class="px-3 w-full">
                                                 <h3 class="bold py-3">Pham Thị Trà Mi</h3>
                                                 <p class="lh-0">Security</p>
+                                                <p class="d-none">Công nghệ ngày nay quá phát triển. Tôi không phải mất tiền cho mỗi lần muốn xem thần số học nữa rồi”</p>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="internal col-md-4 col-sm-12">
-                                    <div class="main__list-user-list-item disabled-cart">
                                         <div class="main__list-user-list-item d-flex flex-column align-items-center justify-content-center">
                                             <img src="./public/asssets/image/ahitcorp-thansohoc-nhanxetkhachhang-4.png" alt="">
                                             <div class="px-3 w-full">
                                                 <h3 class="bold py-3">Nguyễn Thanh Hải</h3>
                                                 <p class="lh-0 main-para-color">Security</p>
+                                                <p class="d-none">“Thần số học khá thú vị, nó thu hút tôi và khiến tôi tin tưởng hơn các thể loại bói toán khác”</p>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="internal col-md-4 col-sm-12">
-                                    <div class="main__list-user-list-item">
                                         <div class="main__list-user-list-item d-flex flex-column align-items-center justify-content-center">
                                             <img src="./public/asssets/image/ahitcorp-thansohoc-nhanxetkhachhang-5.png" alt="">
                                             <div class="px-3 w-full">
-                                                <h3 class="bold py-3 main-text-color">Nam Le Le</h3>
+                                                <h3 class="bold py-3">Nam Le Le</h3>
                                                 <p class="lh-0 main-para-color">Security</p>
+                                                <p class="d-none">“Tôi cảm thấy đúng 95% luôn đấy!”</p>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                              </div>
-                            <div class="right img-routes d-flex align-items-center justify-content-end">
-                                <img id="right-button" src="./public/asssets/image/down-chevron (1).png" alt="">
+                            <div class="right img-routes d-flex align-items-center justify-content-start mps">
+                                <img id="right-button" src="./public/asssets/image/down-chevron (1).png" alt="" onclick="nextBtn()">
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <img src="./publics/asssets/image/icon2.png" alt="">
-                        </div>
-                        <p class="main-para-color pt-3 px-4">"Tôi thật sự bất ngờ với kết quả khi xem thần số học ở đây. 
-                            <br/> Nó quá đúng với cảm nhận của tôi"
-                            <!-- This is review of center person in sceen -->
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <img src="./public/asssets/image/icon2.png" alt="">
+                    </div>
+                    <div class="textReview px-5 mx-5">
+                        <p id="textReview" class="main-para-color pt-3 px-5 mx-5">
                         </p>
                     </div>
                 </div>
@@ -312,8 +306,8 @@
                 </div>
                 <hr>
             </div>
-            <p>Copyright ©2022 Thần số học. Developed by <a href="https://www.google.com/url?q=https://ahitcorp.net/&sa=D&source=docs&ust=1648634369692665&usg=AOvVaw3HMeW6ljXewbbOkl_OAfpl">AHIT Corporation</a> 
-        
+            <p>Copyright ©2022 Thần số học. Developed by <a class="bold company-text-color" href="https://www.google.com/url?q=https://ahitcorp.net/&sa=D&source=docs&ust=1648634369692665&usg=AOvVaw3HMeW6ljXewbbOkl_OAfpl">AHIT Corporation</a> 
+
         </div>
     </div>
 
@@ -336,7 +330,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
     <script></script>
     <script src="{{ asset('./public/asssets/js/js.js') }}"></script>
-
 
     <!--- **************** -->
 

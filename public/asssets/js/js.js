@@ -44,4 +44,32 @@ leftBtn.addEventListener("click", function(event) {
   conent.scrollLeft -= cardReviewWidth;
   event.preventDefault();
 });
+
+//#endregion
+
+//#region Set value for card review
+let cardReviewContent = document.querySelectorAll('.d-none');
+let reviewContent = document.getElementById('textReview');
+let currentReview = 1;
+
+reviewContent.innerHTML = cardReviewContent[currentReview].innerHTML;
+
+function prevBtn() {
+  if(currentReview > 0) {
+    reviewContent.innerHTML = cardReviewContent[currentReview -= 1].innerHTML;
+  }
+  else {
+    reviewContent.innerHTML = cardReviewContent[currentReview].innerHTML;
+  }
+}
+
+function nextBtn() {
+  if(currentReview < cardReviewContent.length) {
+    reviewContent.innerHTML = cardReviewContent[currentReview += 1].innerHTML;
+  }
+  else {
+    reviewContent.innerHTML = cardReviewContent[currentReview].innerHTML;
+  }
+}
+
 //#endregion

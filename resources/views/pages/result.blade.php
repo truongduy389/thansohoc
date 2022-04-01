@@ -125,9 +125,9 @@
                     <p>Linh hồn, sự khao khát từ sâu bên trong của mỗi người. Chỉ số này hé lộ linh hồn hay sâu thẳm trong bạn mong muốn bạn trở thành con người như thế nào thì mới cảm thấy thỏa mãn và trọn vẹn. Nói cách khác, nếu bạn có những đặc điểm tích cực của chỉ số này, linh hồn bạn sẽ cảm thấy hạnh phúc.</p>
                 </div>
                 <div class="main__result-box mt-4 d-flex flex-column align-items-center" data-aos="zoom-in-left">
-                    <h4>XEM THÊM CÁC CỘT MÓC QUAN TRỌNG CỦA BẠN VỚI PEAK YEAR</h4>
+                    <h4>XEM THÊM CÁC CỘT MỐC QUAN TRỌNG CỦA BẠN VỚI PEAK YEAR</h4>
                     
-                    <button class="hv-purple"><a class="text-white hv-purple"href="{{ URL::to('/peak-year/'.Session::get('customer_id')) }}">XEM NGAY</a></button>
+                    <a class="text-white hv-purple"href="{{ URL::to('/peak-year/'.Session::get('customer_id')) }}"><button class="hv-purple">XEM NGAY</button></a>
                    
                 </div>
             </div>

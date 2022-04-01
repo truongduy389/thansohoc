@@ -108,7 +108,13 @@ class HomeController extends Controller
         return view('peakYear.input_py')->with(compact('customer'));
     }
 
+    public function print_pdf($pdf){
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($this->download($pdf));
+        return $pdf->stream();
+    }
     public function download($customer_id){
+        
         $customer=CustomerModel::where('customer_id',$customer_id)->get();
         foreach($customer as $value){
             $ngaythangnam = $value->customer_date;

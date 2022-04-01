@@ -33,34 +33,89 @@
         background-color: #fff;
     }
 
-    .main__content-form-answer-pa-box-items input:last-child {width: 100%;}
+    .main__content-form-answer-pa-box-items input:last-child {
+        width: 100%;
+    }
 
-    .main__content {padding-top: 1300px;}
+    .main__content {
+        padding-top: 1300px;
+    }
 
-    .main__banner-special-link {padding-top: 160px;}
+    .main__banner-special-link {
+        padding-top: 160px;
+    }
 
-    .main__list-user-list-item {width: 100%;}
-    .internal {width: 100% !important;}
+    .main__list-user-list-item {
+        width: 100%;
+    }
+    .internal {
+        width: 100% !important;
+    }
+
+    .main-para-color {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main__list-users-review > .px-5 {
+        padding: 0;
+    }
+    .main__list-users-review > .mx-5 {
+        margin: 0;
+    }
+    .textReview {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .internal {
+        width: 100% !important;
+    }
+
+    .main__list-users-review-box > .d-flex {
+        width: 100% !important;
+    }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     .header-pc {
         display: none;
     }
-    .main {padding-top: 0;}
+    .main {
+        padding-top: 0;
+    }
     .main__list-users-review-box {
         margin: 20px 0 0;
     }
 }
 
 @media (min-width: 1024px) {
-    .header-mobile-btn {display: none;}
-    .main__banner-special-link {
-        margin-top: 50px;
+    .header-mobile-btn {
+        display: none;
+    }
+
+    .main__banner-content {
+        height: 800px;
     }
 
     .main__content {
-        padding-top: 270px;
+        margin-top: 235px;
     }
-    .main__banner-quick-search {padding: 25% 0 29%;}
+
+    .main__banner-special-link {
+        padding-bottom: 100px;
+    }
+
+    .main__content {
+        padding-top: 0px;
+    }
+    .main__banner-quick-search {
+        padding: 15% 0%;
+    }
+    .mpe {
+        padding-right: 40px;
+    }
+
+    .mps {
+        padding-left: 40px;
+    }
 }

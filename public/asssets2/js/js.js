@@ -26,3 +26,22 @@ function showMNav() {
   }
 }
 //#endregion
+
+//#region Scroll Left Button
+const rightBtn = document.querySelector('#right-button');
+const leftBtn = document.querySelector('#left-button');
+let cardReview = document.querySelector('#card-review');
+var cardReviewWidth = cardReview.clientWidth;
+
+rightBtn.addEventListener("click", function(event) {
+  const conent = document.querySelector('#content');
+  conent.scrollLeft += cardReviewWidth;
+  event.preventDefault();
+});
+
+leftBtn.addEventListener("click", function(event) {
+  const conent = document.querySelector('#content');
+  conent.scrollLeft -= cardReviewWidth;
+  event.preventDefault();
+});
+//#endregion

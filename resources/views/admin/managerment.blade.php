@@ -100,7 +100,7 @@
                 <tr>
                   <th style="width: 50px" scope="row">{{ $value->customer_id }}</th>
                   <td>{{ $value->customer_name }}</td>
-                  <td>{{ $value->customer_phone }}</td>
+                  <td>0{{ $value->customer_phone }}</td>
                   <td>{{ $value->customer_email }}</td>
                   <td class="text-center">
                     <?php 

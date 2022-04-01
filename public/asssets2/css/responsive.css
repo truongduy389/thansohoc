@@ -34,6 +34,13 @@
     }
 
     .main__content-form-answer-pa-box-items input:last-child {width: 100%;}
+
+    .main__content {padding-top: 1300px;}
+
+    .main__banner-special-link {padding-top: 160px;}
+
+    .main__list-user-list-item {width: 100%;}
+    .internal {width: 100% !important;}
 }
 
 @media screen and (max-width: 1024px){
@@ -41,8 +48,19 @@
         display: none;
     }
     .main {padding-top: 0;}
+    .main__list-users-review-box {
+        margin: 20px 0 0;
+    }
 }
 
 @media (min-width: 1024px) {
     .header-mobile-btn {display: none;}
+    .main__banner-special-link {
+        margin-top: 50px;
+    }
+
+    .main__content {
+        padding-top: 270px;
+    }
+    .main__banner-quick-search {padding: 25% 0 29%;}
 }
