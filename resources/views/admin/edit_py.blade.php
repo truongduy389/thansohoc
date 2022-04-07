@@ -16,9 +16,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('public/assets/css/base.css')}}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/style.css')}}">
-</head>
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/dashboard.css') }}">
 <body>
     <div class="main__body-admin">
         <div class="main__body-admin-nav d-flex flex-column justify-content-between col-lg-2">

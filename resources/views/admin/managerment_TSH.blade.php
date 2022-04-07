@@ -24,9 +24,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('./public/assets/css/base.css') }}">
-    <link rel="stylesheet" href="{{ asset('./public/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('./public/assets/css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/dashboard.css') }}">
   </head>
   <body>
     <div class="main__body-admin">
@@ -64,7 +64,7 @@
               
           ?></h2>
             <div class="log-out-btn">
-              <i class="fa-solid fa-right-from-bracket"></i>
+              <a href="{{URL::to('/logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
           </div>
         </div>
@@ -124,9 +124,9 @@
 
     <!-- Chart JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ asset('./public/assets/js/chart-js.js') }}"></script>
+    <script src="{{ asset('./public/assets_admin/chart-js.js') }}"></script>
 
     <!-- My JS -->
-    <script src="{{ asset('./public/assets/js/admin.js') }}"></script>
+    <script src="{{ asset('./public/assets_admin/js/admin.js') }}"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Thần số học</title>
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
@@ -87,7 +87,8 @@
                         <div class="p-3">
                             <h2 class="pt-3">KHÁM PHÁ BẢN THÂN THÔNG QUA</h2>
                             <h1 class="pt-3">THẦN SỐ HỌC</h1>
-                            <button class="main-bg-color text-white">TRA CỨU NGAY</button>
+                            <a href="#form-tracuu"><button class="main-bg-color text-white">TRA CỨU NGAY</button></a>
+                            
                         </div>
                     </div>
                     <div class="main__banner-special-link d-flex flex-wrap">
@@ -139,7 +140,7 @@
             </div>
             <div class="main__content-form-answer py-10">
                 <div class="main__content-form-answer-pa">
-                    <div class="container px-4 py-3 h-full d-flex flex-column justify-content-center">
+                    <div id="form-tracuu" class="container px-4 py-3 h-full d-flex flex-column justify-content-center">
                         <div class="text-center text-white">
                             <h2>
                                 BẤT ĐẦU HÀNH TRÌNH KHÁM PHÁ BẢN THÂN <br> THÔNG QUA NHỮNG CON SỐ
@@ -245,7 +246,7 @@
                                         <div class="main__list-user-list-item d-flex flex-column align-items-center justify-content-center">
                                             <img src="./public/asssets/image/ahitcorp-thansohoc-nhanxetkhachhang-3.png" alt="">
                                             <div class="px-3 w-full">
-                                                <h3 class="bold py-3">Pham Thị Trà Mi</h3>
+                                                <h3 class="bold py-3">Phạm Thị Trà Mi</h3>
                                                 <p class="lh-0">Security</p>
                                                 <p class="d-none">Công nghệ ngày nay quá phát triển. Tôi không phải mất tiền cho mỗi lần muốn xem thần số học nữa rồi”</p>
                                             </div>
