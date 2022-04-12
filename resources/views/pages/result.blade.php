@@ -16,8 +16,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('public/assets/css/base.css')}}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('./public/assets_admin/css/dashboard.css') }}">
 
 </head>
 <body>
@@ -139,10 +140,10 @@
                 <h4>THẦN SỐ HỌC VIỆT NAM</h4>
                 <p class="pt-2 pe-5">Công cụ tra cứu thần số học Online của Thần Số Học Việt Nam cứu theo chính xác ngày tháng năm sinh và tên của bạn. Chúng tôi cung cấp hoàn toàn miễn phí và sẽ luôn là như vậy!</p>
                 <div class="social-media mt-3 d-flex">
-                    <img src="{{ asset ('public/assets/img/icon-fb.png') }}" alt="">
-                    <img src="{{ asset ('public/assets/img/telegram.png') }}" alt="">
-                    <img src="{{ asset ('public/assets/img/twitter.png') }}" alt="">
-                    <img src="{{ asset ('public/assets/img/youtube.png') }}" alt="">
+                    <img src="{{ asset ('./public/assets_admin/img/icon-fb.png') }}" alt="">
+                    <img src="{{ asset ('./public/assets_admin/img/telegram.png') }}" alt="">
+                    <img src="{{ asset ('./public/assets_admin/img/twitter.png') }}" alt="">
+                    <img src="{{ asset ('./public/assets_admin/img/youtube.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12 py-4">
@@ -170,6 +171,6 @@
     </script>
 
     <!-- JavaScript -->
-    <script src="/assets/js/js.js"></script>
+    <script src="{{ asset('./public/asssets/js/js.js') }}"></script>
 </body>
 </html>
