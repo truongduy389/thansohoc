@@ -1,2 +1,0 @@
-Em thay đổi database ở file .env và file databse.php trong thư mục config.
-Trong file .env của em DB_PORT = 3308 sau khi down về đổi lại 3306 về mặc định. 

@@ -62,3 +62,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+////////////////////////////////////////////////////////////////
+Em thay đổi database ở file .env và file databse.php trong thư mục config.
+Trong file .env của em DB_PORT = 3308 sau khi down về đổi lại 3306 về mặc định. 
